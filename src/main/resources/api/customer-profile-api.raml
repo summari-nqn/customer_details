@@ -1,0 +1,88 @@
+#%RAML 1.0
+title: customer-profile-api
+
+uses:
+  customer-profile-details: /Library/get-customer-profile-details-library.raml
+/CustomerProfile:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            type: customer-profile-details.get-customer-profile
+            example:
+              [
+                {
+                        customerId : "c100",
+                        customerFName : "John",
+                        customerLName : "Albert",
+                        customerMailId: "johnalbert@gmail.com",
+                        customerAddress: "60 Stillwater Court Palm City",
+                        customerState: "Florida",
+                        customerZipcode: 34990
+                },
+                {
+                        customerId : "c200",
+                        customerFName : "Steve",
+                        customerLName : "Stark",
+                        customerMailId: "steve01@stark.com",
+                        customerAddress: "303 Tanglewood St. Suwanee",
+                        customerState: "Georgia",
+                        customerZipcode: 30024
+                },
+                {
+                        customerId : "c300",
+                        customerFName : "xavier",
+                        customerLName : "bruto",
+                        customerMailId: "xavierbruto@gmail.com",
+                        customerAddress: "546 Swanson Court Hopkinsville",
+                        customerState: "kentucky",
+                        customerZipcode: 42240
+                }
+
+              ]
+              
+              
+  /{customerId}:
+    uriParameters:
+      customerId:
+        type: string
+        required: true
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: customer-profile-details.get-customer-profile-by-uriParams
+              
+              example:
+                [
+                  {
+                          customerId : "c100",
+                          customerFName : "John",
+                          customerLName : "Albert",
+                          customerMailId: "johnalbert@gmail.com",
+                          customerAddress: "60 Stillwater Court Palm City",
+                          customerState: "Florida",
+                          customerZipcode: 34990
+                  },
+                  {
+                          customerId : "c200",
+                          customerFName : "Steve",
+                          customerLName : "Stark",
+                          customerMailId: "steve01@stark.com",
+                          customerAddress: "303 Tanglewood St. Suwanee",
+                          customerState: "Georgia",
+                          customerZipcode: 30024
+                  },
+                  {
+                          customerId : "c300",
+                          customerFName : "xavier",
+                          customerLName : "bruto",
+                          customerMailId: "xavierbruto@gmail.com",
+                          customerAddress: "546 Swanson Court Hopkinsville",
+                          customerState: "kentucky",
+                          customerZipcode: 42240
+                  }
+
+                ]
