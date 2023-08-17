@@ -1,0 +1,71 @@
+#%RAML 1.0 Library
+usage:
+types:
+  get-customer-profile:
+    type: array
+    items:
+              type: object
+              properties:
+                customerId:
+                  type: string
+                  example: "c100"
+                  required: true 
+                customerFName:
+                  type: string
+                  example: "John"
+                  required: true
+                customerLName:
+                  type: string
+                  example: "Albert"
+                  required: true                    
+                customerMailId: 
+                  type: string
+                  required: true
+                  example: "johnalbert@gmail.com"
+                customerAddress:
+                  type: string
+                  required: true
+                  example: "60 Stillwater Court Palm City"
+                customerState:
+                  type: string
+                  required: true
+                  example: "Florida"
+                customerZipcode:
+                  type: integer
+                  required: true
+                  example: 34990
+
+
+  get-customer-profile-by-uriParams:
+    type: array
+    items:
+              type: object
+              properties:
+                customerId:
+                  type: string
+                  example: "c100"
+                  required: true 
+                customerFName:
+                  type: string
+                  example: "John"
+                  required: true
+                customerLName:
+                  type: string
+                  example: "Albert"
+                  required: true                    
+                customerMailId: 
+                  type: string
+                  required: true
+                  example: "johnalbert@gmail.com"
+                customerAddress:
+                  type: string
+                  required: true
+                  example: "60 Stillwater Court Palm City"
+                customerState:
+                  type: string
+                  required: true
+                  example: "Florida"
+                customerZipcode:
+                  type: integer
+                  required: true
+                  example: 34990
